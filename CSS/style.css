@@ -1,0 +1,166 @@
+html, body {
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    height: 100%;
+
+}
+
+
+.svg-wrapper {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 320px;  
+}
+.shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #c0392b;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+    font-family: 'Roboto Condensed';
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 5px;
+    color: #fff;
+    top: -48px;
+    position: relative;
+}
+.svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+}
+
+/*Navbar !!!!!!!!!!!!!!!!!!!!!!! Attention css dans html !!!!!!!!!!!!!!!!!!!!*/
+
+.navbar {
+    background: rgba(0,0,0,0.3);
+}
+
+.navbar .navbar-brand { /*Couleur du text a gauche */
+    color: white;
+}
+
+.menu__list {
+    font-size: 20px;
+    font-family: 'Roboto Consensed';
+}
+
+/* Exportés */
+
+p {
+    color: black;
+    font-size: 50px;
+    font-family: 'Roboto Condensed';
+    text-align: center;
+}
+
+p2 {
+    color: black;
+    font-size: 22px;
+    font-family: Candara;
+    text-align: center;
+}
+
+p3 {
+    color: #c0392b;
+    font-size: 22px;
+    font-family: Candara;
+    text-align: center;
+}
+
+/*Image d'acueil et ses propriété*/
+#acc {
+    height:100%;
+    background-image: url(../IMG/ordi2%20free.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/*fond blanc*/
+.fdb {
+    border-radius: 7px;
+    background:rgba(255,255,255,0.5);
+    margin-left:2%;
+    margin-right:2%;
+}
+
+/*Partie du code qui s'occupe couleur icones*/
+.fa-facebook-square {
+    color: #1549A4;
+}
+.fa-google-plus-square {
+    color: orangered;
+}
+.fa-twitter-square{
+    color: #81BEF7;
+}
+.fa-linkedin-square {
+    color: #0080FF;
+}
+.fa-user {
+    color: #c0392b;
+}
+.fa-envelope{
+    color: #c0392b;
+}
+.fa-pencil{
+    color: #c0392b;
+}
+
+#etoilerouge {
+    color: #c0392b;
+}
+/*Scrollbar*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    background-color: #c0392b;
+}
+
+
+/*Bouton formulair */
+.btn {
+    background-color: #c0392b;
+}
+
+/*Gère l'espacement*/
+
+.espace {
+    min-height: 100vh;
+}
+
+.mi-espace {
+    min-height: 50vh;
+}
+
+.mi-espace2 {
+    min-height: 68vh;
+}
+
+.mini-espace {
+    min-height: 32vh;
+}
+
+#footer {
+    background:rgba(255,255,255,0.5);
+    border-radius: 7px;
+}
+

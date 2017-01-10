@@ -1,0 +1,308 @@
+/* Common styles for all menus */
+.menu {
+	line-height: 1;
+}
+
+.menu__list {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 1;
+	list-style: none;
+}
+
+.menu__item {
+	display: block;
+}
+
+.menu__link {
+	font-size: 1.05em;
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+	outline: none;
+    text-decoration: none;
+}
+
+/* Individual styles */
+
+/* Valentine */
+.menu--valentine .menu__item {
+	position: relative;
+	margin: 0 2em;
+}
+
+.menu--valentine .menu__link {
+	position: relative;
+	display: block;
+	min-width: 105px;
+	text-align: center;
+	color: white;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.menu--valentine .menu__link:hover,
+.menu--valentine .menu__link:focus {
+	color: #c0392b;
+}
+
+.menu--valentine .menu__item--current .menu__link {
+	color: white;
+}
+
+.menu--valentine .menu__item::before,
+.menu--valentine .menu__item::after,
+.menu--valentine .menu__link::before,
+.menu--valentine .menu__link::after {
+	content: '';
+	position: absolute;
+	background: #c0392b;
+	-webkit-transform-origin: 350% 350%;
+	transform-origin: 350% 350%;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.menu--valentine .menu__item::before,
+.menu--valentine .menu__item::after {
+	top: 0;
+	width: 3px;
+	height: 100%;
+	-webkit-transform: scale3d(1, 0, 1);
+	transform: scale3d(1, 0, 1);
+}
+
+/* left line */
+.menu--valentine .menu__item::before {
+	left: 0;
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+/* right line */
+.menu--valentine .menu__item::after {
+	right: 0;
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+.menu--valentine .menu__link::before,
+.menu--valentine .menu__link::after {
+	left: 0;
+	width: 100%;
+	height: 2px;
+	-webkit-transform: scale3d(0, 1, 1);
+	transform: scale3d(0, 1, 1);
+}
+
+/* top line */
+.menu--valentine .menu__link::before {
+	top: 0;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+/* bottom line */
+.menu--valentine .menu__link::after {
+	bottom: 0;
+}
+
+.menu--valentine .menu__item--current::before,
+.menu--valentine .menu__item--current::after,
+.menu--valentine .menu__item--current .menu__link::before,
+.menu--valentine .menu__item--current .menu__link::after {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+
+/* Titania (by @rileyjshaw) */
+.menu--titania .menu__item {
+	margin: 0;
+}
+
+.menu--titania .menu__link {
+	width: 120px;
+	height: 3em;
+	text-align: center;
+	color: white;
+	-webkit-transition: color 0.3s 0.2s;
+	transition: color 0.3s 0.2s;
+}
+
+.menu--titania .menu__link:hover,
+.menu--titania .menu__link:focus {
+	color: #c0392b;
+}
+
+.menu--titania .menu__item--current .menu__link {
+	color: #c0392b;
+	-webkit-transition: color 0.7s 0.2s;
+	transition: color 0.7s 0.2s;
+}
+
+.menu--titania .menu__lines {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120px;
+	height: 100%;
+	pointer-events: none;
+	border: 2px solid #c0392b;
+	border-width: 2px 0;
+	-webkit-transition: -webkit-transform 0.5s 0.2s;
+	transition: transform 0.5s 0.2s;
+	-webkit-transition-timing-function: cubic-bezier(1, 0.01, 0, 1);
+	-webkit-transition-timing-function: cubic-bezier(1, 0.01, 0, 1.22);
+	transition-timing-function: cubic-bezier(1, 0.01, 0, 1.22);
+}
+
+/* vertical lines */
+.menu--titania .menu__lines::before,
+.menu--titania .menu__lines::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #c0392b;
+	border-width: 0 2px;
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+}
+
+/* animates out at transition start */
+.menu--titania .menu__lines::before {
+	-webkit-transform: scale3d(1, 0, 1);
+	transform: scale3d(1, 0, 1);
+	-webkit-transition: -webkit-transform 0.2s ease;
+	transition: transform 0.2s ease;
+}
+
+/* animates back in at transition end */
+.menu--titania .menu__lines::after {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	-webkit-transition: -webkit-transform 0.2s ease 0.7s;
+	transition: transform 0.2s ease 0.7s;
+}
+
+.menu--titania .menu__item:active:not(.menu__item--current) ~ .menu__lines::before,
+.menu--titania .menu__item:active:not(.menu__item--current) ~ .menu__lines::after {
+	-webkit-transition: -webkit-transform 0s;
+	transition: transform 0s;
+}
+
+.menu--titania .menu__item:active:not(.menu__item--current) ~ .menu__lines::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+
+.menu--titania .menu__item:active:not(.menu__item--current) ~ .menu__lines::after {
+	-webkit-transform: scale3d(1, 0, 1);
+	transform: scale3d(1, 0, 1);
+}
+
+.menu--titania .menu__item:nth-child(1).menu__item--current ~ .menu__lines {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.menu--titania .menu__item:nth-child(2).menu__item--current ~ .menu__lines {
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+}
+
+.menu--titania .menu__item:nth-child(3).menu__item--current ~ .menu__lines {
+	-webkit-transform: translate3d(200%, 0, 0);
+	transform: translate3d(200%, 0, 0);
+}
+
+.menu--titania .menu__item:nth-child(4).menu__item--current ~ .menu__lines {
+	-webkit-transform: translate3d(300%, 0, 0);
+	transform: translate3d(300%, 0, 0);
+}
+
+.menu--titania .menu__item:nth-child(5).menu__item--current ~ .menu__lines {
+	-webkit-transform: translate3d(400%, 0, 0);
+	transform: translate3d(400%, 0, 0);
+}
+
+@media screen and (max-width:55em) {
+	.menu--titania .menu__lines {
+		height: 20%;
+		border-width: 0 2px;
+	}
+
+	/* horizontal lines */
+	.menu--titania .menu__lines::before,
+	.menu--titania .menu__lines::after {
+		border-width: 2px 0;
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+	}
+
+	.menu--titania .menu__lines::before {
+		-webkit-transform: scale3d(0, 1, 1);
+		transform: scale3d(0, 1, 1);
+	}
+
+	.menu--titania .menu__item:active:not(.menu__item--current) ~ .menu__lines::after {
+		-webkit-transform: scale3d(0, 1, 1);
+		transform: scale3d(0, 1, 1);
+	}
+
+	.menu--titania .menu__item:nth-child(1).menu__item--current ~ .menu__lines {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	.menu--titania .menu__item:nth-child(2).menu__item--current ~ .menu__lines {
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+
+	.menu--titania .menu__item:nth-child(3).menu__item--current ~ .menu__lines {
+		-webkit-transform: translate3d(0, 200%, 0);
+		transform: translate3d(0, 200%, 0);
+	}
+
+	.menu--titania .menu__item:nth-child(4).menu__item--current ~ .menu__lines {
+		-webkit-transform: translate3d(0, 300%, 0);
+		transform: translate3d(0, 300%, 0);
+	}
+
+	.menu--titania .menu__item:nth-child(5).menu__item--current ~ .menu__lines {
+		-webkit-transform: translate3d(0, 400%, 0);
+		transform: translate3d(0, 400%, 0);
+	}
+}
+
+
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
